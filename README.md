@@ -52,12 +52,13 @@ var loc = [
 
 // Use Mapzen only for testing
 var url = 'http://osrm.mapzen.com/car/viaroute?';
-var _this = this;
 
+// Add all waypoints
 for(var i=0; i<loc.length;i++) {
   url = url + '&loc=' + loc[i];
 }
 
+// Get route from Mapzen
 var jqxhr = $.ajax({
   url: url,
   data: {
@@ -69,9 +70,6 @@ var jqxhr = $.ajax({
 })
 .done(function(data) {
   drawRoute(data);
-})
-.fail(function(data) {
-  console.log(data);
 });
 
 ```
