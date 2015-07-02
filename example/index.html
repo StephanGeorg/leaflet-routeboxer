@@ -6,10 +6,12 @@
 
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.css" />
+
   <script src="//cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script>
 	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+	<script async="" defer="" id="github-bjs" src="https://buttons.github.io/buttons.js"></script>
 
+	<link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.css" />
   <link rel="stylesheet" href="css/m.css" />
 
   <script src="js/app.js"></script>
@@ -32,6 +34,25 @@
 <body>
 
   <div id="map"></div>
+	<div id="controls">
+		<div class="wrapper">
+		  <h2>Leaflet RouteBoxer</h2>
 
+		  <p>
+		    The RouteBoxer class generates a set of L.LatLngBounds objects that are
+				guaranteed to cover every point within a specified distance of a path,
+				such as that generated for a route by an OSRM directions service.<br><br>
+		    <a href="//github.com/StephanGeorg/leaflet-routeboxer">Documentation</a><br>
+				powered by <a href="//nearest.place">Nearest!</a>
+		  </p>
+
+			<!-- Place this tag where you want the button to render. -->
+			<a class="github-button" href="https://github.com/StephanGeorg/leaflet-routeboxer" data-style="mega" aria-label="Star StephanGeorg/leaflet-routeboxer on GitHub">Star</a>
+
+			<a href="https://twitter.com/StephanGeorg" class="twitter-follow-button" data-show-count="false" data-size="large" data-show-screen-name="false">Follow @StephanGeorg</a>
+			<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+		</div>
+</div>
+<script async defer id="github-bjs" src="https://buttons.github.io/buttons.js"></script>
 </body>
 </html>
