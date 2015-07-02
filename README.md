@@ -52,7 +52,7 @@ function drawRoute(data){
   var distance = 10 // distance in km from route
 
   // You need to pass an array of L.LatLng objects to the RouteBoxer
-  var boxes = L.RouteBoxer.box(route = route.getLatLngs(), distance);
+  var boxes = L.RouteBoxer.box(route.getLatLngs(), distance);
   var boxpolys = new Array(boxes.length);
 
   for (var i = 0; i < boxes.length; i++) {
