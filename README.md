@@ -20,11 +20,13 @@ Check out the example: [Demo](http://stephangeorg.github.io/leaflet-routeboxer/e
  */
 function drawRoute(data){
 
-  var route = new L.Polyline(L.PolylineUtil.decode(data.route_geometry, 6)); // OSRM polyline decoding
+  // OSRM polyline decoding w/ https://github.com/jieter/Leaflet.encoded
+  var route = new L.Polyline(L.PolylineUtil.decode(data.route_geometry, 6));
   var distance = 10 // distance in km from route
 
   route = route.getLatLngs();
 
+  // You need to pass an array of L.LatLng objects to the RouteBoxer
   var boxes = L.RouteBoxer.box(route, distance);
   var boxpolys = new Array(boxes.length);
 
