@@ -12,7 +12,7 @@ function App() {
 
   // Load the tiles CartoDB Retina
   var layer = L.tileLayer('http://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}@2x.png', {
-    attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, &copy; <a href="http://cartodb.com/attributions">CartoDB</a>'
+    attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Tiles &copy; <a href="http://cartodb.com/attributions">CartoDB</a>, OSRM instance by <a href="//mapzen.com">Mapzen</a>'
   }).addTo(this.map);
 
   // Waypoints for getting a route of

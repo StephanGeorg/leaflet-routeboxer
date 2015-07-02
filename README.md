@@ -12,9 +12,32 @@ Check out the example [demo](http://stephangeorg.github.io/leaflet-routeboxer/ex
 
 ## Usage
 
-You need to pass an array of L.Latlng objects to the L.RouteBoxer. OSRM uses
-polyline encoding to save bandwith. To decode the polyline you can use
+You need to pass an array of L.Latlng objects (route) to the L.RouteBoxer.
+
+
+```javascript
+
+var route = [
+  L.latLng(50.5, 30.5),
+  L.latLng(50.4, 30.6),
+  L.latLng(50.3, 30.7)
+];
+var boxes = L.RouteBoxer.box(route, distance);
+
+```
+
+OSRM uses polyline encoding to save bandwith. To decode the polyline you can use
 [Leaflet.encoded](https://github.com/jieter/Leaflet.encoded).
+
+```javascript
+
+// data.route_geometry is the result from an OSRM service
+var route = new L.Polyline(L.PolylineUtil.decode(data.route_geometry, 6));
+var boxes = L.RouteBoxer.box(route.getLatLngs(), distance);
+
+```
+
+Here is a complete example
 
 ```javascript
 
