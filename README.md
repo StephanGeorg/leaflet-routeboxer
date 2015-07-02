@@ -6,11 +6,15 @@ The RouteBoxer class generates a set of L.LatLngBounds objects that are guarante
 to cover every point within a specified distance of a path, such as that generated
 for a route by an OSRM directions service.
 
-## Demo
+## Example
 
-Check out the example: [Demo](http://stephangeorg.github.io/leaflet-routeboxer/example/)
+Check out the example [demo](http://stephangeorg.github.io/leaflet-routeboxer/example/)
 
 ## Usage
+
+You need to pass an array of L.Latlng objects to the L.RouteBoxer. OSRM uses
+polyline encoding to save bandwith. To decode the polyline you can use
+[Leaflet.encoded](https://github.com/jieter/Leaflet.encoded). 
 
 ```javascript
 
