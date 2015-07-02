@@ -44,7 +44,8 @@ App.prototype.formArray = function (arr) {
  **/
 App.prototype.drawRoute = function (route) {
 
-  route = this.formArray(route);
+  route = new L.Polyline(L.PolylineUtil.decode(route, 6)); // OSRM polyline decoding
+  route = route.getLatLngs();
 
   var boxes = L.RouteBoxer.box(route, this.distance);
   var bounds = new L.LatLngBounds([]);
@@ -80,7 +81,7 @@ App.prototype.loadRoute = function (loc) {
     url: url,
     data: {
       instructions: false,
-      compression: false,
+      //compression: false,
       alt: false
     },
     dataType: 'json'

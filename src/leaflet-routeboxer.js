@@ -81,10 +81,10 @@ L.RouteBoxer = L.extend({
     // If necessary convert the path into an array of LatLng objects
 
     if (path instanceof Array) {
-      // already an arry of LatLngs (eg. v3 overview_path)
-      vertices = this.formVertices(path);
+      // already an arry of LatLngs (encoded from OSRM)
+      vertices = path;
 
-    // Leaflet-RouteBoxer rewrite coditions and
+    // Leaflet-RouteBoxer rewrite conditions and
 
     } else if (path instanceof google.maps.Polyline) {
       if (path.getPath) {
@@ -116,7 +116,7 @@ L.RouteBoxer = L.extend({
   },
 
   /**
-   * 
+   *
    *
    * @param {L.LatLng[] | L.Polyline} path The path along which to create boxes
    */

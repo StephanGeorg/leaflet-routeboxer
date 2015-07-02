@@ -15,13 +15,16 @@ Check out the example: [Demo](http://stephangeorg.github.io/leaflet-routeboxer/e
 ```javascript
 
 /**
- * Callback function to draw polyline and calculated bounds
+ * Callback function to draw polyline and calculate bounds
  *
  */
 function drawRoute(data){
 
-  var route = formArray(data.route_geometry); // Rearrange array to use with L.polyline
+  var route = new L.Polyline(L.PolylineUtil.decode(data.route_geometry, 6)); // OSRM polyline decoding
   var distance = 10 // distance in km from route
+
+  route = route.getLatLngs();
+
   var boxes = L.RouteBoxer.box(route, distance);
   var boxpolys = new Array(boxes.length);
 
@@ -31,20 +34,8 @@ function drawRoute(data){
   var polyline = L.polyline(route).addTo(this.map); // draw original route
 }
 
-/**
- * Rearrange the LatLng array from OSRM for L.polyline and L.RouteBoxer
- *
- **/
-function formArray(arr) {
-  var narr = [];
-  for(var x=0;x<arr.length;x++){
-    var _n = arr[x].split(',');
-    narr.push([ parseFloat(_n[0]), parseFloat(_n[1])]);
-  }
-  return narr;
-};
 
-// Waypoints for getting a route of
+// Waypoints for the route
 var loc = [
   '53.553406,9.992196',
   '48.139126,11.580186'
@@ -63,7 +54,6 @@ var jqxhr = $.ajax({
   url: url,
   data: {
     instructions: false,
-    compression: false,  // compression must be switched of
     alt: false
   },
   dataType: 'json'
