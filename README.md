@@ -35,7 +35,10 @@ function drawRoute(data){
   var boxpolys = new Array(boxes.length);
 
   for (var i = 0; i < boxes.length; i++) {
+
+    // Perform search over this bounds
     L.rectangle(boxes[i], {color: "#ff7800", weight: 1}).addTo(this.map); // draw rectangles based on Bounds
+
   }
   var polyline = L.polyline(route).addTo(this.map); // draw original route
 }
