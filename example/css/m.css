@@ -24,3 +24,9 @@ body {
 #controls .wrapper {
   padding: 30px;
 }
+
+#result {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
