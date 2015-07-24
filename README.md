@@ -51,10 +51,8 @@ function drawRoute(data){
   var route = new L.Polyline(L.PolylineUtil.decode(data.route_geometry, 6));
   var distance = 10 // distance in km from route
 
-  route = route.getLatLngs();
-
   // You need to pass an array of L.LatLng objects to the RouteBoxer
-  var boxes = L.RouteBoxer.box(route, distance);
+  var boxes = L.RouteBoxer.box(route.getLatLngs(), distance);
   var boxpolys = new Array(boxes.length);
 
   for (var i = 0; i < boxes.length; i++) {
