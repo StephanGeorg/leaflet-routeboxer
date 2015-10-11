@@ -74,7 +74,7 @@ App.prototype.drawRoute = function (route) {
  *
  **/
 App.prototype.loadRoute = function (loc) {
-  var url = 'http://osrm.mapzen.com/car/viaroute?';
+  var url = 'http://router.project-osrm.org/viaroute?';
   var _this = this;
 
   for(var i=0; i<loc.length;i++) {
