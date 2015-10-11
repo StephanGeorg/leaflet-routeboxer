@@ -70,15 +70,15 @@ var loc = [
   '48.139126,11.580186'
 ];
 
-// Use Mapzen only for testing
-var url = 'http://osrm.mapzen.com/car/viaroute?';
+// Use endpoint only for testing
+var url = 'http://router.project-osrm.org/viaroute?';
 
 // Add all waypoints
 for(var i=0; i<loc.length;i++) {
   url = url + '&loc=' + loc[i];
 }
 
-// Get route from Mapzen
+// Get route from OSRM
 var jqxhr = $.ajax({
   url: url,
   data: {
