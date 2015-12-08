@@ -24,9 +24,9 @@ You need to pass an array of L.Latlng objects (route) to the L.RouteBoxer.
 ```javascript
 
 var route = [
-  L.latLng(50.5, 30.5),
-  L.latLng(50.4, 30.6),
-  L.latLng(50.3, 30.7)
+  [50.5, 30.5],
+  [50.4, 30.6],
+  [50.3, 30.7]
 ];
 var boxes = L.RouteBoxer.box(route, distance);
 
