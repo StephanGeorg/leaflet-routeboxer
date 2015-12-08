@@ -80,26 +80,13 @@ L.RouteBoxer = L.extend({
     var vertices = null;
     // If necessary convert the path into an array of LatLng objects
 
+    // already an array of LatLngs
     if (path instanceof Array) {
-      // already an arry of LatLngs (encoded from OSRM)
+
       vertices = path;
-
     // Leaflet-RouteBoxer rewrite conditions and
-
-    } else if (path instanceof google.maps.Polyline) {
-      if (path.getPath) {
-        // v3 Maps API Polyline object
-        vertices = new Array(path.getPath().getLength());
-        for (var i = 0; i < vertices.length; i++) {
-          vertices[i] = path.getPath().getAt(i);
-        }
-      } else {
-        // v2 Maps API Polyline object
-        vertices = new Array(path.getVertexCount());
-        for (var j = 0; j < vertices.length; j++) {
-          vertices[j] = path.getVertex(j);
-        }
-      }
+    } else if (path instanceof L.Polyline) {
+      vertices = path.getLatLngs();
     }
 
     // Build the grid that is overlaid on the route

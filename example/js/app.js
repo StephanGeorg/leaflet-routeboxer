@@ -13,9 +13,9 @@ function App() {
   // Load the tiles CartoDB Retina
   /*var layer = L.tileLayer('http://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}@2x.png', {
     attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Tiles &copy; <a href="http://cartodb.com/attributions">CartoDB</a>, OSRM instance by <a href="//mapzen.com">Mapzen</a>'
-  }).addTo(this.map);*/
+  }).addTo(this.map);/*/
 
-  var layer = L.tileLayer('http://136.243.49.219/retina/{z}/{x}/{y}.png', {
+  var layer = L.tileLayer('http://osm.nearest.place/retina/{z}/{x}/{y}.png', {
     attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Tiles &copy; <a href="http://www.distance.to">Distance.to</a>'
   }).addTo(this.map);
 
@@ -49,7 +49,6 @@ App.prototype.formArray = function (arr) {
 App.prototype.drawRoute = function (route) {
 
   route = new L.Polyline(L.PolylineUtil.decode(route, 6)); // OSRM polyline decoding
-  route = route.getLatLngs();
 
   var boxes = L.RouteBoxer.box(route, this.distance);
   var bounds = new L.LatLngBounds([]);
@@ -60,10 +59,10 @@ App.prototype.drawRoute = function (route) {
     bounds.extend(boxes[i]);
   }
 
-  var polyline = L.polyline(route).addTo(this.map);
+  route.addTo(this.map);
   this.map.fitBounds(bounds);
 
-  return polyline;
+  return route;
 
 };
 

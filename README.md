@@ -10,6 +10,12 @@ for a route by an OSRM directions service.
 
 Check out the example [demo](http://stephangeorg.github.io/leaflet-routeboxer/example/)
 
+## Install
+
+```
+bower install leaflet-routeboxer
+```
+
 ## Usage
 
 You need to pass an array of L.Latlng objects (route) to the L.RouteBoxer.
@@ -31,7 +37,7 @@ OSRM uses polyline encoding to save bandwith. To decode the polyline you can use
 
 ```javascript
 
-// data.route_geometry is the result from an OSRM service
+// data.route_geometry is the result from a OSRM endpoint
 var route = new L.Polyline(L.PolylineUtil.decode(data.route_geometry, 6));
 var boxes = L.RouteBoxer.box(route.getLatLngs(), distance);
 
