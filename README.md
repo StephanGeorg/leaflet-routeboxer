@@ -10,6 +10,12 @@ for a route by an OSRM directions service.
 
 Check out the example [demo](http://stephangeorg.github.io/leaflet-routeboxer/example/)
 
+## Install
+
+```
+bower install leaflet-routeboxer
+```
+
 ## Usage
 
 You need to pass an array of L.Latlng objects (route) to the L.RouteBoxer.
