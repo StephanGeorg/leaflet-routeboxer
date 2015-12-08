@@ -32,6 +32,8 @@ var boxes = L.RouteBoxer.box(route, distance);
 
 ```
 
+### Using OSRM service
+
 OSRM uses polyline encoding to save bandwith. To decode the polyline you can use
 [Leaflet.encoded](https://github.com/jieter/Leaflet.encoded).
 
