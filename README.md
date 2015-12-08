@@ -58,7 +58,7 @@ function drawRoute(data){
   var distance = 10 // distance in km from route
 
   // You need to pass an array of L.LatLng objects to the RouteBoxer
-  var boxes = L.RouteBoxer.box(route.getLatLngs(), distance);
+  var boxes = L.RouteBoxer.box(route, distance);
   var boxpolys = new Array(boxes.length);
 
   for (var i = 0; i < boxes.length; i++) {
@@ -67,7 +67,7 @@ function drawRoute(data){
     L.rectangle(boxes[i], {color: "#ff7800", weight: 1}).addTo(this.map); // draw rectangles based on Bounds
 
   }
-  var polyline = L.polyline(route).addTo(this.map); // draw original route
+  route.addTo(this.map); // draw original route
 }
 
 // Waypoints for the route
