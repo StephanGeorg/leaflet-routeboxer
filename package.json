@@ -2,7 +2,7 @@
   "name": "leaflet-routeboxer",
   "version": "1.0.0",
   "description": "Google RouteBoxer implementation for Leaflet",
-  "main": "index.js",
+  "main": "./src/leaflet-routeboxer.js",
   "directories": {
     "example": "example"
   },
