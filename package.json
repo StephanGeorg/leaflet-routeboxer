@@ -1,0 +1,30 @@
+{
+  "name": "leaflet-routeboxer",
+  "version": "1.0.0",
+  "description": "Google RouteBoxer implementation for Leaflet",
+  "main": "./src/leaflet-routeboxer.js",
+  "directories": {
+    "example": "example"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/StephanGeorg/leaflet-routeboxer.git"
+  },
+  "keywords": [
+    "maps",
+    "leaflet",
+    "routeboxer"
+  ],
+  "author": "Stephan Georg",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/StephanGeorg/leaflet-routeboxer/issues"
+  },
+  "homepage": "https://github.com/StephanGeorg/leaflet-routeboxer#readme",
+  "dependencies": {
+    "leaflet": "^0.7.7"
+  }
+}
