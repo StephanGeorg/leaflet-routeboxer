@@ -21,8 +21,8 @@ function App() {
 
   // Waypoints for getting a route of
   var loc = [
-    '53.553406,9.992196',
-    '48.139126,11.580186'
+    '9.992196,53.553406',
+    '11.580186,48.139126'
   ];
 
   this.route = this.loadRoute(loc, this.drawRoute);
@@ -48,7 +48,7 @@ App.prototype.formArray = function (arr) {
  **/
 App.prototype.drawRoute = function (route) {
 
-  route = new L.Polyline(L.PolylineUtil.decode(route, 6)); // OSRM polyline decoding
+  route = new L.Polyline(L.PolylineUtil.decode(route)); // OSRM polyline decoding
 
   var boxes = L.RouteBoxer.box(route, this.distance);
   var bounds = new L.LatLngBounds([]);
@@ -73,24 +73,23 @@ App.prototype.drawRoute = function (route) {
  *
  **/
 App.prototype.loadRoute = function (loc) {
-  var url = 'http://router.project-osrm.org/viaroute?';
+  var url = 'https://router.project-osrm.org/route/v1/driving/';
   var _this = this;
 
-  for(var i=0; i<loc.length;i++) {
-    url = url + '&loc=' + loc[i];
-  }
+  url += loc.join(';');
 
   var jqxhr = $.ajax({
     url: url,
     data: {
-      instructions: false,
+      overview: 'full',
+      steps: false,
       //compression: false,
-      alt: false
+      alternatives: false
     },
     dataType: 'json'
   })
   .done(function(data) {
-    _this.drawRoute(data.route_geometry);
+    _this.drawRoute(data.routes[0].geometry);
   })
   .fail(function(data) {
     console.log(data);

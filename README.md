@@ -32,7 +32,7 @@ var boxes = L.RouteBoxer.box(route, distance);
 
 ```
 
-### Using OSRM service
+### Using w/ OSRM service
 
 OSRM uses polyline encoding to save bandwith. To decode the polyline you can use
 [Leaflet.encoded](https://github.com/jieter/Leaflet.encoded).
@@ -40,63 +40,7 @@ OSRM uses polyline encoding to save bandwith. To decode the polyline you can use
 ```javascript
 
 // data.route_geometry is the result from a OSRM endpoint
-var route = new L.Polyline(L.PolylineUtil.decode(data.route_geometry, 6));
+var route = new L.Polyline(L.PolylineUtil.decode(data.route[0].geometry));
 var boxes = L.RouteBoxer.box(route, distance);
-
-```
-
-Here is a complete example
-
-```javascript
-
-/**
- * Callback function to draw polyline and calculate bounds
- *
- */
-function drawRoute(data){
-
-  // OSRM polyline decoding w/ https://github.com/jieter/Leaflet.encoded
-  var route = new L.Polyline(L.PolylineUtil.decode(data.route_geometry, 6));
-  var distance = 10 // distance in km from route
-
-  // You need to pass an array of L.LatLng objects to the RouteBoxer
-  var boxes = L.RouteBoxer.box(route, distance);
-  var boxpolys = new Array(boxes.length);
-
-  for (var i = 0; i < boxes.length; i++) {
-
-    // Perform search over this bounds
-    L.rectangle(boxes[i], {color: "#ff7800", weight: 1}).addTo(this.map); // draw rectangles based on Bounds
-
-  }
-  route.addTo(this.map); // draw original route
-}
-
-// Waypoints for the route
-var loc = [
-  '53.553406,9.992196',
-  '48.139126,11.580186'
-];
-
-// Use endpoint only for testing
-var url = 'http://router.project-osrm.org/viaroute?';
-
-// Add all waypoints
-for(var i=0; i<loc.length;i++) {
-  url = url + '&loc=' + loc[i];
-}
-
-// Get route from OSRM
-var jqxhr = $.ajax({
-  url: url,
-  data: {
-    instructions: false,
-    alt: false
-  },
-  dataType: 'json'
-})
-.done(function(data) {
-  drawRoute(data);
-});
 
 ```
