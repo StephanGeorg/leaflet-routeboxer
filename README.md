@@ -13,7 +13,7 @@ Check out the example [demo](http://stephangeorg.github.io/leaflet-routeboxer/ex
 ## Install
 
 ```
-bower install leaflet-routeboxer
+npm i leaflet-routeboxer -S
 ```
 
 ## Usage
