@@ -1,4 +1,4 @@
-# Leaflet RouteBoxer
+# Leaflet RouteBoxer [![npm version](https://badge.fury.io/js/leaflet-routeboxer.svg)](https://badge.fury.io/js/leaflet-routeboxer)
 
 This is a Leaflet implementation of the [RouteBoxer](http://google-maps-utility-library-v3.googlecode.com/svn/trunk/routeboxer/docs/examples.html) Class from Google.
 
