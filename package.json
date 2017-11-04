@@ -1,6 +1,6 @@
 {
   "name": "leaflet-routeboxer",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Google RouteBoxer implementation for Leaflet",
   "main": "./src/leaflet-routeboxer.js",
   "directories": {
