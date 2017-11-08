@@ -22,6 +22,7 @@ var route = [
   [50.4, 30.6],
   [50.3, 30.7]
 ];
+var distance = 10; // Distance in km
 var boxes = L.RouteBoxer.box(route, distance);
 
 ```
