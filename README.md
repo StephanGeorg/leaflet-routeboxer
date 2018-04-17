@@ -1,6 +1,6 @@
 # Leaflet RouteBoxer
 
-This is a Leaflet implementation of the [RouteBoxer](http://google-maps-utility-library-v3.googlecode.com/svn/trunk/routeboxer/docs/examples.html) Class from Google.
+This is a Leaflet implementation of Google's RouteBoxer class.
 
 The RouteBoxer class generates a set of L.LatLngBounds objects that are guaranteed
 to cover every point within a specified distance of a path, such as that generated
