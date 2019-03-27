@@ -1,6 +1,6 @@
 # Leaflet RouteBoxer
 
-This is a Leaflet implementation of the [RouteBoxer](http://google-maps-utility-library-v3.googlecode.com/svn/trunk/routeboxer/docs/examples.html) Class from Google.
+This is a Leaflet implementation of Google's RouteBoxer class.
 
 The RouteBoxer class generates a set of L.LatLngBounds objects that are guaranteed
 to cover every point within a specified distance of a path, such as that generated
@@ -22,6 +22,7 @@ var route = [
   [50.4, 30.6],
   [50.3, 30.7]
 ];
+var distance = 10; // Distance in km
 var boxes = L.RouteBoxer.box(route, distance);
 
 ```
@@ -35,6 +36,7 @@ OSRM uses polyline encoding to save bandwith. To decode the polyline you can use
 
 // data.route_geometry is the result from a OSRM endpoint
 var route = new L.Polyline(L.PolylineUtil.decode(data.route[0].geometry));
+var distance = 10; // Distance in km
 var boxes = L.RouteBoxer.box(route, distance);
 
 ```
