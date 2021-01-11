@@ -8,7 +8,7 @@ for a route by an OSRM directions service.
 
 ## Example
 
-Check out the example [demo](http://stephangeorg.github.io/leaflet-routeboxer/example/)
+Check out the example [demo](https://stephangeorg.github.io/leaflet-routeboxer/example/)
 
 ## Usage
 
